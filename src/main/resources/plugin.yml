@@ -1,0 +1,11 @@
+name: ${project.name}
+version: ${project.version}
+description: 'Plugin to allow players to change their nicknames if they have enough tokens.'
+depend: [Essentials]
+softdepend: []
+authors: [Stealth2800]
+website: http://minerave.com
+main: com.stealthyone.mcbc.nicktokens.NickTokens
+commands:
+  nicktokens:
+    aliases: [nt]
