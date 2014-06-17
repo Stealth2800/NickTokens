@@ -10,7 +10,7 @@
 
     <groupId>com.stealthyone.mcbc</groupId>
     <artifactId>nicktokens</artifactId>
-    <version>1.0</version>
+    <version>1.1.0</version>
     <name>NickTokens</name>
 
     <repositories>
@@ -22,6 +22,11 @@
         <repository>
             <id>essentials-repo</id>
             <url>http://repo.ess3.net/content/groups/essentials</url>
+        </repository>
+
+        <repository>
+            <id>Plugin Metrics</id>
+            <url>http://repo.mcstats.org/content/repositories/public</url>
         </repository>
     </repositories>
 
@@ -42,6 +47,13 @@
             <groupId>net.ess3</groupId>
             <artifactId>Essentials</artifactId>
             <version>2.13-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mcstats</groupId>
+            <artifactId>metrics</artifactId>
+            <version>1.2-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -67,7 +79,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
@@ -77,7 +89,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>1.5</version>
+                <version>2.3</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -87,16 +99,23 @@
 
                         <configuration>
                             <minimizeJar>false</minimizeJar>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                             <relocations>
                                 <relocation>
                                     <pattern>com.stealthyone.mcb.stbukkitlib</pattern>
                                     <shadedPattern>com.stealthyone.mcbc.nicktokens.shade.stbukkitlib</shadedPattern>
+                                </relocation>
+
+                                <relocation>
+                                    <pattern>org.mcstats</pattern>
+                                    <shadedPattern>com.stealthyone.mcbc.nicktokens.shade.metrics</shadedPattern>
                                 </relocation>
                             </relocations>
 
                             <artifactSet>
                                 <includes>
                                     <include>com.stealthyone.mcb:stbukkitlib</include>
+                                    <include>org.mcstats:metrics</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
@@ -107,11 +126,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.1</version>
+                <version>2.4</version>
                 <configuration>
                     <archive>
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                         </manifest>
                     </archive>
                 </configuration>
