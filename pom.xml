@@ -13,6 +13,24 @@
     <version>1.1.0</version>
     <name>NickTokens</name>
 
+    <scm>
+        <connection>scm:git:git://github.com/Stealth2800/NickTokens.git</connection>
+        <developerConnection>scm:git:git@github.com:Stealth2800/NickTokens.git</developerConnection>
+        <url>https://github.com/Stealth2800/NickTokens</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>stealthyone-releases</id>
+            <url>http://repo.stealthyone.com/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>stealthyone-snapshots</id>
+            <url>http://repo.stealthyone.com/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>bukkit-repo</id>
