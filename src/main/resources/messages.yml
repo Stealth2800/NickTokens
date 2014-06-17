@@ -27,5 +27,5 @@ usages:
   - '&e/{LABEL} save &8- &6Save plugin configuration and data.'
   tokens_add: '&4USAGE: &c/{LABEL} add [player] <amount>'
   tokens_check: '&4USAGE: &c/{LABEL} check [player]'
-  tokens_remove: '&4USAGE: &c/{LABEL} reset [player]'
+  tokens_remove: '&4USAGE: &c/{LABEL} remove [player] <amount>'
   tokens_reset: '&4USAGE: &c/{LABEL} reset [player]'
