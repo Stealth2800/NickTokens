@@ -52,6 +52,10 @@ public class NickTokens extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
+        getConfig().options().copyDefaults(false);
+        saveConfig();
+
         messageManager.reloadMessages();
         uuidTracker = new PlayerUUIDTracker(this);
         uuidTracker.load();

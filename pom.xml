@@ -77,7 +77,6 @@
 
     <build>
         <defaultGoal>clean install</defaultGoal>
-        <finalName>${project.name} v${project.version}</finalName>
 
         <resources>
             <resource>
@@ -116,7 +115,7 @@
                         </goals>
 
                         <configuration>
-                            <minimizeJar>false</minimizeJar>
+                            <minimizeJar>true</minimizeJar>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <relocations>
                                 <relocation>
